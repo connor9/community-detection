@@ -12,7 +12,7 @@ FILES = Graph.cc Main.cc
 
 OBJECTS = $(FILES:.cc=.o)
 
-$(TARGET): ${OBJECTS}
+$(TARGET): $(OBJECTS)
 	$(LINK) $^ $(LFLAGS) -o $@
 
 all: $(TARGET)

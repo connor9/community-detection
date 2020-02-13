@@ -40,3 +40,4 @@ cmake-build-debug/
 
 comboCPP*
 *.edgelist
+*.txt
