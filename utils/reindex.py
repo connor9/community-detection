@@ -48,8 +48,7 @@ with open(filename, 'r') as csvfile:
         wr = csv.writer(csvfile2, delimiter=' ')
         r = csv.reader(csvfile, delimiter=',')
         for row in r:
-            row[0] = mappings[int(row[0])]
-            row[1] = mappings[int(row[1])]
-            wr.writerow(row)
+            new_row = (mappings[int(row[0])], mappings[int(row[1])], row[2]) 
+            wr.writerow(new_row)
 
 print("New file written.")
