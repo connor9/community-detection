@@ -1,3 +1,10 @@
+# Community detection
+
+Source code originally from http://senseable.mit.edu/community_detection/
+
+This repository adds cmake support and provides a utility for converting and reindexing nodes from CSV files.
+
+## Original Readme
 
 This is an implementation (for Modularity maximization) of the community detection algorithm called "Combo" described in the paper "General optimization technique for high-quality community detection in complex networks" by Stanislav Sobolevsky, Riccardo Campari, Alexander Belyi and Carlo Ratti.
 Please, send your feedback, bug reports and questions to:
