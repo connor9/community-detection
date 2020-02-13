@@ -38,7 +38,6 @@ cmake-build-debug/
 *.app
 
 
-comboCPP*
 *.edgelist
 *.txt
 .idea/
