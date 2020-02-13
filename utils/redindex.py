@@ -14,10 +14,19 @@ This script changes a file to rewrite all node indexes to start from 1. It will 
 indexes, de-duplicate and sort them and then map this list to numbers starting from 1.
 '''
 
-
+import sys
 import csv
+import os.path
 
-filename = 'source.txt'
+if len(sys.argv) <= 1:
+    print("You need to pass in a filename as a parameter")
+    sys.exit(0)
+
+filename = sys.argv[1]
+if not os.path.isfile(filename):
+    print("You specifed an invalid file or a directory or something.")
+    sys.exit(0)
+
 all_indexes = []
 mappings = {}
 
@@ -36,9 +45,11 @@ for index in all_indexes:
 
 with open(filename, 'r') as csvfile:
     with open(filename + '.edgelist', 'w', newline='') as csvfile2:
-        wr = csv.writer(csvfile2, delimiter=',')
+        wr = csv.writer(csvfile2, delimiter=' ')
         r = csv.reader(csvfile, delimiter=',')
         for row in r:
             row[0] = mappings[int(row[0])]
             row[1] = mappings[int(row[1])]
             wr.writerow(row)
+
+print("New file written.")
