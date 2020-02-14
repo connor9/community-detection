@@ -360,7 +360,8 @@ int main(int argc, char** argv)
 	//cout << fileName << " " << G.Modularity() << endl;
 	//cout << "Elapsed time is " << (double(clock() - startTime)/CLOCKS_PER_SEC) << endl;
 
-	G.PrintCommunity(fileName.substr(0, fileName.rfind('.')) + "_comm_comboC++.txt");
+	std::string new_ext = "_comms_" + std::to_string(max_comunities) + "comboC++.txt";
+	G.PrintCommunity(fileName.substr(0, fileName.rfind('.')) + new_ext);
 	cout << G.Modularity() << endl;
 	return 0;
 }
